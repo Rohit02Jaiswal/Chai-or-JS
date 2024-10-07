@@ -18,20 +18,20 @@ Prefer not to use var
 because of issue in block scope and functional scope
 */
 
-console.table([email, password, loversName]);
+// console.table([email, password, loversName]);
 
 // alert(5+5);  // We are using nodejs, not browser
 
 let undefine; // output: undefine
 let emp = null; // output: object
-console.table([typeof undefine, typeof emp]);
+// console.table([typeof undefine, typeof emp]);
 
 // Datatype conversion -------------------------
 let score = "33";
-console.log(typeof(score));
+// console.log(typeof(score));
 let convertedScore = Number(score);
-console.log(typeof convertedScore);
-console.log(convertedScore);
+// console.log(typeof convertedScore);
+// console.log(convertedScore);
 
 //  "33" => 33
 // "33ac" => NaN
@@ -39,17 +39,17 @@ console.log(convertedScore);
 
 let isLoggedIn = "Rohit";
 let booleanIsLoggedIn = Boolean(isLoggedIn);
-console.log(booleanIsLoggedIn);
+// console.log(booleanIsLoggedIn);
 
 // 1 => true; 0 => false; "rohit" => true; "" => false
 
 let someNum = 69;
-console.log(typeof someNum); // datatype: number
+// console.log(typeof someNum); // datatype: number
 let stringConversion = String(someNum);
-console.log(typeof stringConversion); // datatype: string
+// console.log(typeof stringConversion); // datatype: string
 
 // data types and conversion
-console.log("1"===1);
+// console.log("1"===1);
 // Datatypes summaries -----------------------------------------
 /*
 Primitive:
@@ -70,12 +70,12 @@ String:-------------------------------------------------------------------------
 let name = "Rohit";
 let repoCount = 30;
 // console.log(name + repoCount + "Project"); // Old syntax
-console.log(`Hello may name is ${name} and my repo count is ${repoCount}`); // Modern syntax
+// console.log(`Hello may name is ${name} and my repo count is ${repoCount}`); // Modern syntax
 
 const newString = "      user name is jaiswal      ";
 
-console.log(newString);
-console.log(newString.trim());
+// console.log(newString);
+// console.log(newString.trim());
 
 /* 
 Numbers and Maths ----------------------------------------
@@ -83,29 +83,61 @@ Numbers and Maths ----------------------------------------
 */
 const nums = 400; // datatype: number
 const balance = new Number(100); // output: [Number: 100]
-console.log(balance);
+// console.log(balance);
 
-console.log(Math.random()); // Range : 0-1
-console.log((Math.random()*10) + 1); // output: 10.26646477
-console.log(Math.floor((Math.random()*10) + 1)); // output: 7
+// console.log(Math.random()); // Range : 0-1
+// console.log((Math.random()*10) + 1); // output: 10.26646477
+// console.log(Math.floor((Math.random()*10) + 1)); // output: 7
 
 const min = 10;
 const max = 20;
-console.log(Math.floor((Math.random() * (max - min + 1)) + min)); // output: 18
+// console.log(Math.floor((Math.random() * (max - min + 1)) + min)); // output: 18
 
 /* 
 Dates in javascript
 */
 let myDate = new Date();
-console.log(myDate);  // output: 2024-09-14T14:38:54.929Z
-console.log(myDate.toString()); // output: Sat Sep 14 2024 14:38:54 GMT+0000 (Coordinated Universal Time)
-console.log(myDate.toDateString()); // output: Sat Sep 14 2024
-console.log(myDate.toLocaleString()); // output: 9/14/2024, 2:38:54 PM
-console.log(myDate.toLocaleDateString()); // output: 9/14/2024
-console.log(myDate.toLocaleTimeString()); // output: 2:38:54 PM
+// console.log(myDate);  // output: 2024-09-14T14:38:54.929Z
+// console.log(myDate.toString()); // output: Sat Sep 14 2024 14:38:54 GMT+0000 (Coordinated Universal Time)
+// console.log(myDate.toDateString()); // output: Sat Sep 14 2024
+// console.log(myDate.toLocaleString()); // output: 9/14/2024, 2:38:54 PM
+// console.log(myDate.toLocaleDateString()); // output: 9/14/2024
+// console.log(myDate.toLocaleTimeString()); // output: 2:38:54 PM
 // typeof date is always an object **Interview question
 let createDate = new Date(2023, 0, 21);
-console.log(createDate.toDateString()); // output: Sat Jan 21 2023
+// console.log(createDate.toDateString()); // output: Sat Jan 21 2023
 
 let myTimeStamp = Date.now();
-console.log(myTimeStamp); // output: 1726325222786 millisecond
+// console.log(myTimeStamp); // output: 1726325222786 millisecond
+
+
+// Array -----------------------------------------------------------------------------
+const myArray = [0,1,2,3,4,5, "Rohit"]; // Elements may be different type
+//  Shallow Copy Vs Deep Copy Read docs
+// console.log(myArray[6]);
+const myArr2 = new Array(0,1,2,3,4,5, "Jaiswal"); // Another way to declare array
+// console.log(myArr2);
+
+// Array methods--------------------------------------------------
+// Read docs on: push(), pop(), unshift(), shift()
+
+const newArray = myArray.join(); // join() converts the array into string
+console.log(typeof(myArray));  // datatype: array or object
+console.log(typeof(newArray)); // datatype: string
+
+// Slice Vs Splice Interview question -------------------------
+
+// console.log(myArray + myArr2);
+// const allArr = [...myArray, ...myArr2];
+// console.log(allArr);
+
+const another_arr = [1,2,3, [4,5,6], 7, [6,7, [4,5]]];
+const real_another_arr = another_arr.flat(Infinity); // Array spread out
+// console.log(real_another_arr);
+
+//  isArray is used for checking it is array or not!
+let score1 = 100;
+let score2 = 200;
+let score3 = 300;
+
+console.log(Array.of(score1, score2, score3));  // Converting variable into array
